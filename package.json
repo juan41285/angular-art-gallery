@@ -1,0 +1,14 @@
+{
+  "name": "Angular Art Gallery",
+  "version": "1.0.0",
+  "devDependencies": {
+    "bower":"latest",
+    "grunt": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less":"latest",
+    "grunt-contrib-clean":"latest",
+    "grunt-html-build":"latest",
+    "grunt-contrib-watch":"latest"
+  }
+}

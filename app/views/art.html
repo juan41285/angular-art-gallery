@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-12">
+            <h3><a href="https://github.com/gigablox/angular-art-gallery">Source on GitHub</a></h3>
+            <p> 
+                <b><a href="https://github.com/gigablox/angular-art-gallery">https://github.com/gigablox/angular-art-gallery</a></b><br>
+                <span class="smallText">(Copy/Paste URL if link doesn't work - some weird Plunker bug.)</span>
+            </p>
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-controller="Albums">
+    <div class="row">
+        <div class="col col-lg-12">
+            <h3>Tags</h3>
+            <span class="smallText">(Tags are stateful via ngCookies. Returning users will see last used tags. Direct links with search parameters overwrite and update cookies.)</span><br><br>
+            <ul class="nav nav-pills">
+                <li ng-repeat="album in albumsList" ng-class="{active:taggedA(album.id)}" ng-click="filterAlbum(album.id)">
+                    <a href="#">{{album.title}}</a>
+                </li>
+            </ul>
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-12">
+            <h3>Albums</h3>
+            <div masonry>
+                <div ng-repeat="album in albums | filter:taggedB">
+                    <div class="masonry-brick" ng-repeat="image in album.images">
+                        <img ng-src="{{image.link|imageSize:t}}"/>
+                    </div>
+                </div>
+            </div>
+            <span class="smallText">(Click the tags above to add/remove albums. Albums are only fetched once throughout app life cycle to prevent duplicate API calls.)</span>
+        </div>
+    </div>
+</div>
