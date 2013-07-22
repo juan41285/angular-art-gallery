@@ -2,7 +2,7 @@
 
 Latest trends in Front-End development with a touch of the best practises.
 
-See a [Plunker](http://plnkr.co/akHTslTdRMvfe3KrnPeO)
+See a <b>[Plunker](http://plnkr.co/akHTslTdRMvfe3KrnPeO)</b>
 
 ## Features
 * [Masonry 3](http://masonry.desandro.com/) for mason blocking images.
