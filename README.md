@@ -2,6 +2,8 @@
 
 Latest trends in Front-End development with a touch of the best practises.
 
+See a [Plunker](http://plnkr.co/akHTslTdRMvfe3KrnPeO)
+
 ## Features
 * [Masonry 3](http://masonry.desandro.com/) for mason blocking images.
 * [Bootstrap 3](https://github.com/twitter/bootstrap/tree/3.0.0-wip) for responsive layout.
