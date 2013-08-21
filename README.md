@@ -33,8 +33,8 @@ This AngularJS project is wrapped in commonly used front end development tools t
 [Get an Imgur API key](https://api.imgur.com/) and add it to your `app.config`  
 
     $imgurGlobalProvider.options({
-    apiKey:'1234567890abcdefgh',
-    account:'YourAccountName'
+        apiKey:'1234567890abcdefgh',
+        account:'YourAccountName'
     });
 
 #### Build your app with Grunt Tasks
@@ -42,7 +42,7 @@ This AngularJS project is wrapped in commonly used front end development tools t
 `grunt package:dev:watch`  
 `grunt package:prod`  
 
-#### Starting dev with the angular provided web-server
+### Starting dev with the angular provided web-server
 `cd examples/development`
 `../../scripts/web-server.js`
 
@@ -55,14 +55,12 @@ Now open a browser and go to [http://127.0.0.1:8000/index.html](http://127.0.0.1
 `/build/production`
 
 #### pushState Support
-Nginx pushState `server{}` rules  
-    # Need this for $locationProvider.html5Mode(true);
+Nginx pushState `server{}` rules, need this for $locationProvider.html5Mode(true);
     location / {
         try_files $uri /index.html;
     }
 
-Apache pushState `.htaccess` rules  
-    # Need this for $locationProvider.html5Mode(true);
+Apache pushState `.htaccess` rules, need this for $locationProvider.html5Mode(true);
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
