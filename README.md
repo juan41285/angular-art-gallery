@@ -55,17 +55,23 @@ Now open a browser and go to [http://127.0.0.1:8000/index.html](http://127.0.0.1
 `/build/production`
 
 #### pushState Support
-Nginx pushState `server{}` rules, need this for $locationProvider.html5Mode(true);
-    location / {
-        try_files $uri /index.html;
-    }
+Nginx pushState `server{}` rules
+<pre>
+# Need this for $locationProvider.html5Mode(true);
+location / {
+    try_files $uri /index.html;
+}
+</pre>
 
-Apache pushState `.htaccess` rules, need this for $locationProvider.html5Mode(true);
+Apache pushState `.htaccess` rules
+<pre>
+    #Need this for $locationProvider.html5Mode(true);
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} !index
     RewriteRule (.*) index.html [L]
+</pre>
 
 Here are more complete rules for both [Nginx]() and [Apache]()
 
