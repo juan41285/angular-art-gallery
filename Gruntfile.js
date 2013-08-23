@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         files: {
           // Bundle order can be acheived with globbing patterns.
           // See: https://github.com/gruntjs/grunt/wiki/Configuring-tasks#globbing-patterns
-          'build/production/js/a.js':['build/_compile/js/jquery.min.js',
+          'build/production/js/a.js':['build/_compile/js/jquery.js',
                                         'build/_compile/js/angular.js',
                                         'build/_compile/js/angular-resource.js',
                                         'build/_compile/js/ui-bootstrap.min.js',
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
           {expand: true, cwd: '<%= bowerConfig.directory %>/angular-bootstrap/', src: ['ui-bootstrap.min.js'], dest: 'build/_compile/js'},
           {expand: true, cwd: '<%= bowerConfig.directory %>/angular-resource.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-resource.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/angular.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular.js';}},
-          {expand: true, cwd: '<%= bowerConfig.directory %>/jquery/', src: ['jquery.min.js'], dest: 'build/_compile/js'},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/jquery/', src: ['jquery.js'], dest: 'build/_compile/js'},
           {expand: true, cwd: '<%= bowerConfig.directory %>/masonry.pkgd/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'masonry.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/angular-imgur-api/', src: ['imgur.js'], dest: 'build/_compile/js'},
           {expand: true, cwd: '<%= bowerConfig.directory %>/ng-infinite-scroll.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'nginfinitescroll.js';}},
@@ -147,7 +147,7 @@ module.exports = function(grunt) {
                     bundle: [
                         // Bundle order can be acheived with globbing patterns.
                         // See: https://github.com/gruntjs/grunt/wiki/Configuring-tasks#globbing-patterns
-                        'build/development/js/jquery.min.js',
+                        'build/development/js/jquery.js',
                         'build/development/js/angular.js',
                         'build/development/js/angular-resource.js',
                         'build/development/js/jquery.masonry.min.js',
