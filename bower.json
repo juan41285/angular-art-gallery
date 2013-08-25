@@ -1,11 +1,11 @@
 {
   "name": "Angular Art Gallery",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "dependencies": {
     "angular-bootstrap": "~0.3.0",
-    "3.0.0-wip": "https://github.com/twitter/bootstrap/archive/3.0.0-wip.zip",
+    "bootstrap": "~3.0.0",
+    "angular": "1.2.0rc1",
     "angular.min": "https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js",
-    "angular-resource.min": "https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular-resource.min.js",
     "jquery": "2.0.0",
     "angular-imgur-api": "git@github.com:gigablox/angular-imgur-api.git",
     "angular-cookies": "http://code.angularjs.org/1.1.5/angular-cookies.js",

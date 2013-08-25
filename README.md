@@ -27,43 +27,50 @@ This AngularJS project is wrapped in commonly used front end development tools t
 `cd angular-art-gallery`  
 `npm install`  
 `bower install`  
+`npm install -g grunt-cli`
 
 #### Get an Imgur API key
 [Get an Imgur API key](https://api.imgur.com/) and add it to your `app.config`  
 
-<pre>
-$imgurGlobalProvider.options({
-  apiKey:'1234567890abcdefgh',
-  account:'YourAccountName'
-});
-</pre>
+    $imgurGlobalProvider.options({
+        apiKey:'1234567890abcdefgh',
+        account:'YourAccountName'
+    });
 
 #### Build your app with Grunt Tasks
 `grunt package:dev`  
 `grunt package:dev:watch`  
 `grunt package:prod`  
 
+### Starting dev with the angular provided web-server
+`cd examples/development`
+`../../scripts/web-server.js`
+
+Now open a browser and go to [http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)
+
+### Nginx/Apache Instructions
+
 #### Point your doc-root
 `/build/development`  
 `/build/production`
 
 #### pushState Support
-Nginx pushState `server{}` rules  
+Nginx pushState `server{}` rules
 <pre>
-### Need this for $locationProvider.html5Mode(true);
+# Need this for $locationProvider.html5Mode(true);
 location / {
-   try_files $uri /index.html;
+    try_files $uri /index.html;
 }
 </pre>
 
-Apache pushState `.htaccess` rules  
+Apache pushState `.htaccess` rules
 <pre>
-### Need this for $locationProvider.html5Mode(true);
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !index
-RewriteRule (.*) index.html [L]
+    #Need this for $locationProvider.html5Mode(true);
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !index
+    RewriteRule (.*) index.html [L]
 </pre>
 
 Here are more complete rules for both [Nginx]() and [Apache]()
