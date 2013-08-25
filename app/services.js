@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app.services', ['ngResource']).
-  factory('Albums', function($cookies, $location, inCookieFilter, $imgurAlbum, $imgurAccount, subArraysFilter, compareArraysFilter, $rootScope) {
+  factory('Albums', function($cookies, $location, inCookieFilter, $imgurAlbum, $imgurAccount, subArraysFilter, compareArraysFilter, $rootScope, $q) {
     var albums = {},
         tagsNew = [],
         tagsOld = [],
@@ -10,9 +10,9 @@ angular.module('app.services', ['ngResource']).
 
     //Here we are fetching albumList once when it's injected into controller.
     var imgurAccount = $imgurAccount.imgurAccount();
-    imgurAccount.getAccountAlbums(function(value){
+    imgurAccount.get().get().$promise.then(function(value){
       //Set albumList equal to the value in the callback.
-      albumsList = value;
+      albumsList = value.data;
       //Let the world know how much you rock.
       $rootScope.$broadcast('albumsListUpdated');
     });
@@ -62,14 +62,18 @@ angular.module('app.services', ['ngResource']).
         //Find new tags by subtracting those in cookie and against old incase previously fetched.
         tagsNew = subArraysFilter(subArraysFilter(tags, tagsNew), tagsOld);
         //Fetch new tags.
-        var imgurAlbum = $imgurAlbum.imgurAlbum({albumList:tagsNew});
-        imgurAlbum.getAlbum(function(value){
-          value.forEach(function(album){
+        var prom = [];
+        tagsNew.forEach(function(tag){
+          var imgurAlbum = $imgurAlbum.imgurAlbum({id:tag});
+          var promise = imgurAlbum.get().get().$promise.then(function(value){
             //Push new albums.
-            albumsFetched.push(album);
+            albumsFetched.push(value.data);
             //Keep track of previously fetched.
-            tagsOld.push(album.id);
+            tagsOld.push(value.data.id);
           });
+          prom.push(promise);
+        });
+        $q.all(prom).then(function () {
           //When you are done, sync local array with cookie array.
           tagsNew = tags;
           //Let the world know how much you rock.

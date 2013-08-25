@@ -67,7 +67,7 @@ module.exports = function(grunt) {
            * CSS files need to end in .less for @import compilation. */
           
           /* @ /plugins */
-          {expand: true, cwd: '<%= bowerConfig.directory %>/3.0.0-wip/less/', src: ['*'], dest: 'build/_compile/less', filter: 'isFile'}, // includes files ONLY in cwd
+          {expand: true, cwd: '<%= bowerConfig.directory %>/bootstrap/less/', src: ['*'], dest: 'build/_compile/less', filter: 'isFile'}, // includes files ONLY in cwd
           
           /* @ /app    */
           {expand: true, flatten: true, src: ['app/assets/less/**'], dest: 'build/_compile/less', filter: 'isFile'}, //includes files recursively than flattens into same level directory
@@ -76,16 +76,16 @@ module.exports = function(grunt) {
       js: {
         files: [
           /* Javascript */
-          
-          /* @ /plugins */
-          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-bootstrap/', src: ['ui-bootstrap.min.js'], dest: 'build/_compile/js'},
-          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-resource.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-resource.js';}},
-          {expand: true, cwd: '<%= bowerConfig.directory %>/angular.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular.js';}},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-bootstrap/', src: ['ui-bootstrap-tpls.js'], dest: 'build/_compile/js'},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-resource/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-resource.js';}},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/angular/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular.js';}},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-route/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-route.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/jquery/', src: ['jquery.js'], dest: 'build/_compile/js'},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/ng-infinite-scroll.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'nginfinitescroll.js';}},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-ui-utils/modules/keypress', src: ['keypress.js'], dest: 'build/_compile/js'},
+          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-cookies/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-cookies.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/masonry.pkgd/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'masonry.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/angular-imgur-api/', src: ['imgur.js'], dest: 'build/_compile/js'},
-          {expand: true, cwd: '<%= bowerConfig.directory %>/ng-infinite-scroll.min/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'nginfinitescroll.js';}},
-          {expand: true, cwd: '<%= bowerConfig.directory %>/angular-cookies/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-cookies.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/angular-masonry/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'angular-masonry.js';}},
           {expand: true, cwd: '<%= bowerConfig.directory %>/imagesloaded.pkgd/', src: ['index.js'], dest: 'build/_compile/js/', rename: function(dest, src) {return dest + src.substring(0, src.indexOf('/')) + 'imagesloaded.js';}},
           

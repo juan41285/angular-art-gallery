@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app', ['app.filters', 'app.services', 'app.directives', 'app.controllers', 'ui.bootstrap', 'imgur', 'ngCookies', 'wu.masonry']).
+angular.module('app', ['app.filters', 'app.services', 'app.directives', 'app.controllers', 'ui.bootstrap', 'imgur', 'ngCookies', 'wu.masonry','ngRoute']).
   config(['$routeProvider', '$locationProvider', '$imgurGlobalProvider', function($routeProvider, $locationProvider, $imgurGlobalProvider) {
 
     $imgurGlobalProvider.options({

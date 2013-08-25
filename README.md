@@ -37,18 +37,13 @@ This AngularJS project is wrapped in commonly used front end development tools t
         account:'YourAccountName'
     });
 
-#### Build your app with Grunt Tasks
+#### Build with Grunt
 `grunt package:dev`  
 `grunt package:dev:watch`  
-`grunt package:prod`  
+`grunt package:prod`
 
-### Starting dev with the angular provided web-server
-`cd examples/development`
-`../../scripts/web-server.js`
 
-Now open a browser and go to [http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)
-
-### Nginx/Apache Instructions
+### Nginx/Apache
 
 #### Point your doc-root
 `/build/development`  
@@ -74,6 +69,14 @@ Apache pushState `.htaccess` rules
 </pre>
 
 Here are more complete rules for both [Nginx]() and [Apache]()
+
+
+### Node Server
+`cd examples/development`
+`../../scripts/web-server.js`
+
+Now open a browser and go to [http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)
+
 
 ## License
 Copyright (c) 2013 Daniel Kanze (@gigablox) Licensed under the MIT License.
