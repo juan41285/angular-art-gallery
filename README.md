@@ -72,10 +72,11 @@ Here are more complete rules for both [Nginx]() and [Apache]()
 
 
 ### Node Server
-`cd examples/development`
-`../../scripts/web-server.js`
 
-Now open a browser and go to [http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)
+Build your package and point the node server to `/build/<environment>`
+
+`node web-server.js`
+[http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)
 
 
 ## License
