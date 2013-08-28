@@ -73,9 +73,9 @@ Here are more complete rules for both [Nginx]() and [Apache]()
 
 ### Node Server
 
-Build your package and point the node server to `/build/<environment>`
+Build your package and point the node server to `/build/<environment>`    
 
-`node web-server.js`
+`node web-server.js`  
 [http://127.0.0.1:8000/index.html](http://127.0.0.1:8000/index.html)
 
 
