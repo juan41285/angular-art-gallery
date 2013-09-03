@@ -1,6 +1,6 @@
 # Angular Art Gallery
 
-Latest trends in Front-End development with a touch of the best practises.
+Art Gallery application using dynamic API data built with AngularJS
 
 See a <b>[Plunker](http://plnkr.co/akHTslTdRMvfe3KrnPeO)</b>
 
